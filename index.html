@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Your Name | Frontend Developer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="header">
+
+        <nav class="nav container">
+
+            <a href="#" class="nav__logo">
+                WIY
+            </a>
+
+            <div class="nav__links">
+
+                <a href="#home">Home</a>
+
+                <a href="#projects">Projects</a>
+
+                <a href="#about">About</a>
+
+                <a href="#skills">Skills</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
+            <button class="nav__menu-btn" id="menu-btn">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         MOBILE MENU
+    ====================================================== -->
+
+    <div class="mobile__menu" id="mobile-menu">
+
+        <a href="#home">Home</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#about">About</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero" id="home">
+
+    <!-- Logo Layer -->
+    <div class="hero__logo-layer">
+        <img
+            src="./asset/WIY-main-logo.png"
+            alt="Portfolio logo"
+            class="hero__logo">
+    </div>
+
+    <!-- Main Hero Content -->
+    <div class="container hero__container">
+        <div class="hero__content">
+
+            <p class="hero__eyebrow">
+                FRONTEND DEVELOPER
+            </p>
+
+            <h1>
+                Building <span>Modern</span> Websites.
+            </h1>
+
+            <p class="hero__description">
+                I create responsive, modern websites and digital experiences
+                with clean, thoughtful design.
+            </p>
+
+            <div class="hero__buttons">
+                <a href="#projects" class="button button--primary">
+                    View My Work
+                </a>
+
+                <a href="#contact" class="button button--secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero__scroll">
+            <span class="hero__scroll-icon"></span>
+            <span>SCROLL TO EXPLORE</span>
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- =================================================
+             FEATURED PROJECTS
+        ================================================== -->
+
+        <section class="projects" id="projects">
+    <div class="container">
+
+        <div class="section__heading">
+            <p class="section__eyebrow">MY WORK</p>
+            <h2>Featured Projects</h2>
+            <p>
+                A collection of websites and projects I've built while developing
+                my skills in frontend development.
+            </p>
+        </div>
+
+        <div class="projects__featured">
+
+            <div class="project__featured-image">
+                <img
+                    src="./asset/redeemed-roasters.png"
+                    alt="Redeemed Roasters website"
+                >
+            </div>
+
+            <div class="project__featured-content">
+
+                <p class="project__category">WEB DESIGN</p>
+
+                <h3>Redeemed Roasters</h3>
+
+                <p class="project__description">
+                    A modern coffee shop website designed with responsive layouts,
+                    clean typography, and a polished user experience across desktop,
+                    tablet, and mobile devices.
+                </p>
+
+                <div class="project__tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Responsive</span>
+                </div>
+
+                <div class="project__links">
+                    <a href="https://66vmn7gwnf-star.github.io/redeemed-roasters/" 
+                    class="project__link project__link--primary"
+                    target="_blank"
+                    rel="nooper noreferrer">
+                        Live Website →
+                    </a>
+
+                    <a href="https://github.com/66vmn7gwnf-star/redeemed-roasters.git"
+                     class="project__link"
+                     target="_blank"
+                     rel="nooper noreferrer">
+                        GitHub →
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="projects__other">
+
+    <div class="projects__other-heading">
+        <p class="section__eyebrow">MORE WORK</p>
+        <h3>Other Projects</h3>
+    </div>
+
+
+    <div class="projects__grid">
+
+        <!-- Project 2 -->
+        <article class="project__card">
+
+            <div class="project__image">
+                <img
+                    src="./asset/treact-project.png"
+                    alt="SaaS landing page project"
+                >
+            </div>
+
+            <div class="project__content">
+
+                <p class="project__category">
+                    LANDING PAGE
+                </p>
+
+                <h3>SaaS Landing Page</h3>
+
+                <p>
+                    A responsive SaaS landing page built with modern
+                    HTML and CSS techniques.
+                </p>
+
+                <div class="project__tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Responsive</span>
+                </div>
+
+                <div class="project__links">
+
+                    <a href="#">
+                        Live Website →
+                    </a>
+
+                    <a href="#">
+                        GitHub →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Project 3 -->
+        <article class="project__card">
+
+            <div class="project__image">
+                <img
+                    src="./asset/project-three.png"
+                    alt="Web development project"
+                >
+            </div>
+
+            <div class="project__content">
+
+                <p class="project__category">
+                    WEB DEVELOPMENT
+                </p>
+
+                <h3>Project Three</h3>
+
+                <p>
+                    A responsive website focused on clean design,
+                    usability, and modern frontend development.
+                </p>
+
+                <div class="project__tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="project__links">
+
+                    <a href="#">
+                        Live Website →
+                    </a>
+
+                    <a href="#">
+                        GitHub →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</div>
+
+    </div>
+</section>
+
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
+
+        <section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about__row">
+
+            <!-- About Visual -->
+            <div class="about__visual">
+
+                <div class="about__visual-box">
+
+                    <div class="about__logo-mark">
+                        WIY
+                    </div>
+
+                    <p>
+                        THE WEB IS YOURS TO DESIGN
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- About Content -->
+            <div class="about__content">
+
+                <p class="section__eyebrow">
+                    ABOUT ME
+                </p>
+
+                <h2>
+                    Building the Web
+                    <span>My Way.</span>
+                </h2>
+
+                <p class="about__text">
+                    I'm a frontend developer focused on creating modern,
+                    responsive websites with clean design and thoughtful
+                    user experiences.
+                </p>
+
+                <p class="about__text">
+                    I enjoy taking an idea from the first concept all the
+                    way to a finished website, combining creativity,
+                    technology, and problem-solving along the way.
+                </p>
+
+                <a href="#skills" class="button button--primary">
+                    Explore My Skills →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="skills" id="skills">
+
+    <div class="container">
+
+        <div class="section__heading skills__heading">
+
+            <p class="section__eyebrow">
+                MY SKILLS
+            </p>
+
+            <h2>
+                Tools I Use to
+                <span>Build the Web.</span>
+            </h2>
+
+            <p>
+                The technologies and tools I use to turn ideas into
+                responsive, functional, and polished websites.
+            </p>
+
+        </div>
+
+
+        <div class="skills__panel">
+
+            <div class="skills__panel-header">
+
+                <div>
+                    <p class="skills__panel-label">
+                        FRONTEND DEVELOPMENT
+                    </p>
+
+                    <h3>
+                        Core Technologies
+                    </h3>
+                </div>
+
+                <div class="skills__status">
+                    <span></span>
+                    CURRENTLY LEARNING
+                </div>
+
+            </div>
+
+
+            <div class="skills__grid">
+
+                <!-- HTML -->
+
+                <div class="skill__card">
+
+                    <div class="skill__icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <div class="skill__info">
+
+                        <h4>HTML</h4>
+
+                        <p>
+                            Semantic structure and accessible
+                            website foundations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CSS -->
+
+                <div class="skill__card">
+
+                    <div class="skill__icon">
+                        #
+                    </div>
+
+                    <div class="skill__info">
+
+                        <h4>CSS</h4>
+
+                        <p>
+                            Responsive layouts, styling,
+                            animations, and visual design.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- JavaScript -->
+
+                <div class="skill__card">
+
+                    <div class="skill__icon skill__icon--js">
+                        JS
+                    </div>
+
+                    <div class="skill__info">
+
+                        <h4>JavaScript</h4>
+
+                        <p>
+                            Interactive features and
+                            dynamic website behavior.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Responsive Design -->
+
+                <div class="skill__card">
+
+                    <div class="skill__icon">
+                        ↗
+                    </div>
+
+                    <div class="skill__info">
+
+                        <h4>Responsive Design</h4>
+
+                        <p>
+                            Websites designed for desktop,
+                            tablet, and mobile.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Git -->
+
+                <div class="skill__card">
+
+                    <div class="skill__icon">
+                        Git
+                    </div>
+
+                    <div class="skill__info">
+
+                        <h4>Git</h4>
+
+                        <p>
+                            Version control and organized
+                            development workflows.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GitHub -->
+
+                <div class="skill__card">
+
+                    <div class="skill__icon">
+                        GH
+                    </div>
+
+                    <div class="skill__info">
+
+                        <h4>GitHub</h4>
+
+                        <p>
+                            Project management, repositories,
+                            and deployment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
+
+        <section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact__box">
+
+            <div class="contact__content">
+
+                <p class="section__eyebrow">
+                    GET IN TOUCH
+                </p>
+
+                <h2>
+                    Let's Build Something
+                    <span>Together.</span>
+                </h2>
+
+                <p class="contact__description">
+                    Have a project idea, website concept, or just want
+                    to connect? I'd love to hear from you.
+                </p>
+
+            </div>
+
+
+            <div class="contact__actions">
+
+                <a
+                    href="mailto:your@email.com"
+                    class="contact__button contact__button--primary"
+                >
+                    Email Me →
+                </a>
+
+                <a
+                    href="https://github.com/"
+                    class="contact__button contact__button--secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+    <div class="container">
+
+        <div class="footer__top">
+
+            <div class="footer__brand">
+
+                <a href="#home" class="footer__logo">
+                    <span>W</span>IY
+                </a>
+
+                <p>
+                    The web is yours to design.
+                </p>
+
+            </div>
+
+
+            <div class="footer__links">
+
+                <a href="#home">Home</a>
+
+                <a href="#projects">Projects</a>
+
+                <a href="#about">About</a>
+
+                <a href="#skills">Skills</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer__bottom">
+
+            <p>
+                © 2026 WIY. All rights reserved.
+            </p>
+
+            <p>
+                Designed & built with HTML, CSS & JavaScript.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
