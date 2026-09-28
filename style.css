@@ -63,86 +63,94 @@ body {
 body {
     margin: 0;
 }
-/* =====================================================
-   NAVIGATION
-===================================================== */
+/* =========================
+   HEADER
+========================= */
 
-.header{
-    width:100%;
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    position:relative;
-    z-index:1000;
+    width: 100%;
 
-    background:var(--navy);
+    background: rgba(7, 26, 51, 0.92);
 
-    border-bottom:1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(35, 69, 107, 0.7);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
-.nav{
-    min-height:80px;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.nav {
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Logo */
-
-.nav__logo{
-    font-size:20px;
-    font-weight:800;
-
-    letter-spacing:1px;
-
-    color:var(--white);
-}
-
-.nav__logo::first-letter{
-    color:var(--blue-bright);
-}
 
 /* Desktop Links */
 
-.nav__links{
-    display:flex;
-    align-items:center;
-
-    gap:36px;
+.nav__links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
 }
 
-.nav__links a{
-    position:relative;
 
-    font-size:15px;
-    font-weight:600;
+.nav__links a {
+    position: relative;
 
-    color:var(--text-light);
+    font-size: 14px;
+    font-weight: 600;
 
-    transition:color .3s ease;
+    color: var(--text-light);
+
+    transition: color 0.3s ease;
 }
 
-.nav__links a:hover{
-    color:var(--white);
+
+.nav__links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--blue-bright);
+
+    transition: width 0.3s ease;
 }
 
-.nav__links a::after{
-    content:"";
 
-    position:absolute;
-
-    left:0;
-    bottom:-8px;
-
-    width:0;
-    height:2px;
-
-    background:var(--blue-bright);
-
-    transition:width .3s ease;
+.nav__links a:hover {
+    color: var(--white);
 }
 
-.nav__links a:hover::after{
-    width:100%;
+
+.nav__links a:hover::after {
+    width: 100%;
+}
+
+/* logo */
+
+.nav__logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.nav__logo:hover {
+    color: var(--blue-bright);
 }
 
 /* =====================================================
@@ -2742,5 +2750,112 @@ body {
     .contact__button {
         max-width: 100% !important;
     }
+}
+
+/* ========================================
+   PROJECTS POLISH
+======================================== */
+
+.section__heading h2 {
+    max-width: 700px;
+}
+
+.section__heading > p:last-child {
+    max-width: 650px;
+}
+
+.projects__featured {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.project__featured-image {
+    position: relative;
+}
+
+.project__featured-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 60%,
+        rgba(20, 86, 217, 0.08)
+    );
+    pointer-events: none;
+}
+
+.project__featured-content {
+    position: relative;
+}
+
+.project__featured-content h3 {
+    transition: color 0.3s ease;
+}
+
+.projects__featured:hover .project__featured-content h3 {
+    color: var(--blue-bright);
+}
+
+.project__tags span {
+    padding: 7px 13px;
+    border: 1px solid rgba(47, 128, 237, 0.25);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--text-light);
+    background: rgba(20, 86, 217, 0.06);
+    transition: border-color 0.3s ease,
+                color 0.3s ease,
+                background 0.3s ease;
+}
+
+.project__tags span:hover {
+    border-color: var(--blue-bright);
+    color: var(--white);
+    background: rgba(20, 86, 217, 0.12);
+}
+
+.project__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.project__link--primary {
+    box-shadow: 0 8px 24px rgba(20, 86, 217, 0.22);
+}
+
+.project__link--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(47, 128, 237, 0.28);
+}
+
+.project__card {
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+.project__content h3 {
+    transition: color 0.3s ease;
+}
+
+.project__card:hover .project__content h3 {
+    color: var(--blue-bright);
+}
+
+.project__image {
+    position: relative;
+}
+
+.project__image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 50%,
+        rgba(7, 26, 51, 0.18)
+    );
+    pointer-events: none;
 }
 
