@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Start a Project | WIY</title>
+
+    <meta name="description" content="Professional website design, redesign, and development services from WIY. Tell us about your next website project.">
+
+    <link rel="icon" type="image/png" href="./asset/WIY-main-logo.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+
+        <nav class="nav">
+
+            <a href="index.html" class="nav__logo">
+                YOUR NAME
+            </a>
+
+            <div class="nav__links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#projects">Featured Work</a>
+                <a href="collection.html">Collection</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <button class="nav__menu-btn" id="menu-btn" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+
+        <div class="mobile__menu" id="mobile-menu">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#projects">Featured Work</a>
+            <a href="collection.html">Collection</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="overlay" id="overlay"></div>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- CONTACT INTRO -->
+
+    <section class="contact-page__hero">
+
+        <div class="container">
+
+            <div class="contact-page__intro">
+
+                <p class="section__eyebrow">
+                    LET'S WORK TOGETHER
+                </p>
+
+                <h1>
+                    Have a Website in <span>Mind?</span>
+                </h1>
+
+                <p>
+                    Whether you're starting a new business, updating
+                    an existing website, or looking for a completely
+                    new design, WIY can help bring your ideas to life.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT FORM -->
+
+    <section class="contact-page">
+
+        <div class="container">
+
+            <div class="contact-page__layout">
+
+
+                <!-- LEFT SIDE -->
+
+                <div class="contact-page__information">
+
+                    <p class="contact-page__label">
+                        WHAT WE DO
+                    </p>
+
+                    <h2>
+                        Let's build something that works for you.
+                    </h2>
+
+                    <p class="contact-page__description">
+                        Every website should have a purpose. Whether
+                        that's attracting customers, showcasing a
+                        business, or creating a better online experience,
+                        we'll work toward a solution that fits your goals.
+                    </p>
+
+
+                    <div class="contact-page__services">
+
+                        <div class="contact-page__service">
+                            <span>01</span>
+                            <p>New Website Design</p>
+                        </div>
+
+                        <div class="contact-page__service">
+                            <span>02</span>
+                            <p>Website Redesign</p>
+                        </div>
+
+                        <div class="contact-page__service">
+                            <span>03</span>
+                            <p>Website Updates & Maintenance</p>
+                        </div>
+
+                        <div class="contact-page__service">
+                            <span>04</span>
+                            <p>Landing Page Development</p>
+                        </div>
+
+                        <div class="contact-page__service">
+                            <span>05</span>
+                            <p>Hosting & Ongoing Support</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-page__direct">
+
+                        <p>Prefer to email directly?</p>
+
+                        <a href="mailto:YOUR_EMAIL">
+                            YOUR_EMAIL →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE: FORM -->
+
+                <div class="contact-page__form-wrapper">
+
+                    <div class="contact-page__form-heading">
+
+                        <p class="contact-page__label">
+                            START A PROJECT
+                        </p>
+
+                        <h2>
+                            Tell us about your idea.
+                        </h2>
+
+                        <p>
+                            Fill out the form below and we'll have
+                            the information needed to discuss your project.
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        class="contact-form"
+                        id="contact-form"
+                        action="https://formspree.io/f/YOUR_FORM_ID"
+                        method="POST"
+                    >
+
+                        <!-- Spam protection -->
+                        <div class="contact-form__honeypot" aria-hidden="true">
+                            <label>
+                                Leave this field empty
+                                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                            </label>
+                        </div>
+
+                        <div class="contact-form__row">
+
+                            <div class="contact-form__field">
+                                <label for="client-name">Full Name *</label>
+                                <input
+                                    type="text"
+                                    id="client-name"
+                                    name="name"
+                                    placeholder="Your name"
+                                    autocomplete="name"
+                                    required
+                                >
+                            </div>
+
+                            <div class="contact-form__field">
+                                <label for="client-email">Email Address *</label>
+                                <input
+                                    type="email"
+                                    id="client-email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-form__field">
+                            <label for="business-name">Business / Organization</label>
+                            <input
+                                type="text"
+                                id="business-name"
+                                name="business"
+                                placeholder="Business name (if applicable)"
+                            >
+                        </div>
+
+
+                        <div class="contact-form__field">
+
+                            <label for="service">What can we help you with? *</label>
+
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option>New Website Design</option>
+                                <option>Website Redesign</option>
+                                <option>Website Updates & Maintenance</option>
+                                <option>Landing Page Development</option>
+                                <option>Website Hosting & Ongoing Support</option>
+                                <option>Not Sure Yet / Other</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="contact-form__field">
+                            <label for="existing-website">Existing Website</label>
+                            <input
+                                type="url"
+                                id="existing-website"
+                                name="existing_website"
+                                placeholder="https://www.example.com"
+                            >
+                            <small>Optional — include this if you already have a website.</small>
+                        </div>
+
+
+                        <div class="contact-form__field">
+
+                            <label for="timeline">When would you like to get started?</label>
+
+                            <select id="timeline" name="timeline">
+                                <option value="" selected>Select a timeline</option>
+                                <option>As soon as possible</option>
+                                <option>Within the next month</option>
+                                <option>Within 1–3 months</option>
+                                <option>More than 3 months</option>
+                                <option>Just exploring options</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="contact-form__field">
+
+                            <label for="project-details">
+                                Tell us about your project *
+                            </label>
+
+                            <textarea
+                                id="project-details"
+                                name="message"
+                                rows="6"
+                                placeholder="What kind of website do you need? What are you hoping to accomplish?"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button type="submit" class="contact-form__submit">
+                            Send Project Inquiry <span>→</span>
+                        </button>
+
+                        <p class="contact-form__status" id="form-status" role="status" aria-live="polite"></p>
+
+                        <p class="contact-form__note">
+                            Your information will only be used to respond
+                            to your inquiry.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer__top">
+
+            <div class="footer__brand">
+
+                <a href="index.html" class="footer__logo">
+                    <span>W</span> IY
+                </a>
+
+                <p>The web is yours to design.</p>
+
+            </div>
+
+            <div class="footer__links">
+                <a href="index.html#home">Home</a>
+                <a href="collection.html">Collection</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+
+            <p>© 2026 WIY. All rights reserved.</p>
+
+            <p>Professional Web Design & Development.</p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+<script src="contact.js"></script>
+
+</body>
+</html>
