@@ -1,0 +1,226 @@
+/* =================================
+   WIY INQUIRY CONFIRMATION
+================================= */
+
+.confirmation-page {
+    min-height: 100vh;
+    background: #071A33;
+    color: #FFFFFF;
+}
+
+
+/* =================================
+   CONFIRMATION LAYOUT
+================================= */
+
+.confirmation {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 24px;
+}
+
+.confirmation__content {
+    width: 100%;
+    max-width: 760px;
+
+    text-align: center;
+}
+
+
+/* =================================
+   EYEBROW
+================================= */
+
+.confirmation__eyebrow {
+    margin-bottom: 28px;
+
+    color: #2F80ED;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+
+/* =================================
+   CHECKMARK
+================================= */
+
+.confirmation__icon {
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #2F80ED;
+    border-radius: 50%;
+
+    color: #2F80ED;
+
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+/* =================================
+   HEADING
+================================= */
+
+.confirmation h1 {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.confirmation h1 span {
+    color: #2F80ED;
+}
+
+
+/* =================================
+   DIVIDER
+================================= */
+
+.confirmation__divider {
+    width: 70px;
+    height: 2px;
+
+    margin: 38px auto;
+
+    background: #2F80ED;
+}
+
+
+/* =================================
+   MESSAGE
+================================= */
+
+.confirmation__message {
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    color: #A9B8CC;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   BUTTONS
+================================= */
+
+.confirmation__actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin-top: 42px;
+}
+
+.confirmation__button {
+    min-width: 190px;
+
+    padding: 16px 26px;
+
+    border: 1px solid #2F80ED;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    text-align: center;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.confirmation__button:hover {
+    transform: translateY(-3px);
+}
+
+.confirmation__button--primary {
+    background: #2F80ED;
+    color: #FFFFFF;
+}
+
+.confirmation__button--primary:hover {
+    background: #1456D9;
+}
+
+.confirmation__button--secondary {
+    background: transparent;
+    color: #FFFFFF;
+}
+
+.confirmation__button--secondary:hover {
+    background: #FFFFFF;
+    color: #071A33;
+}
+
+
+/* =================================
+   NOTE
+================================= */
+
+.confirmation__note {
+    margin-top: 36px;
+
+    color: #71829A;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 1px;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+    .confirmation {
+        min-height: calc(100vh - 70px);
+
+        padding: 80px 20px;
+    }
+
+    .confirmation h1 {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+        letter-spacing: -1px;
+    }
+
+    .confirmation__message {
+        font-size: 0.95rem;
+    }
+
+    .confirmation__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .confirmation__button {
+        width: 100%;
+        max-width: 330px;
+    }
+
+}
