@@ -43,12 +43,11 @@ if (contactForm && formStatus) {
 
             if (response.ok) {
 
-                contactForm.reset();
+    contactForm.reset();
 
-                formStatus.textContent =
-                    "Thank you! Your inquiry has been submitted successfully.";
+    window.location.href = "inquiry-confirmed.html";
 
-            } else {
+} else {
 
                 formStatus.textContent =
                     "Something went wrong. Please try again or email us directly.";

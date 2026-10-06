@@ -2947,3 +2947,200 @@ body {
     text-align: center;
     margin: 64px auto 0;
 }
+
+/* =================================
+   INQUIRY CONFIRMATION
+================================= */
+
+.confirmation-page {
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+}
+
+.confirmation {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.confirmation__content {
+    width: 100%;
+    max-width: 760px;
+}
+
+/* EYEBROW */
+
+.confirmation__eyebrow {
+    color: var(--blue-bright);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+/* CHECKMARK */
+
+.confirmation__icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--blue-bright);
+    border-radius: 50%;
+
+    color: var(--blue-bright);
+
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* HEADING */
+
+.confirmation h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+
+    line-height: 1.05;
+
+    margin: 0;
+}
+
+.confirmation h1 span {
+    color: var(--blue-bright);
+}
+
+/* DIVIDER */
+
+.confirmation__divider {
+    width: 70px;
+    height: 2px;
+
+    background: var(--blue-bright);
+
+    margin: 35px auto;
+}
+
+/* MESSAGE */
+
+.confirmation__message {
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    color: var(--text-light);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+/* BUTTONS */
+
+.confirmation__actions {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+.confirmation__button {
+    min-width: 190px;
+
+    padding: 16px 25px;
+
+    border: 1px solid var(--blue-bright);
+
+    font-weight: 600;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.confirmation__button:hover {
+    transform: translateY(-3px);
+}
+
+.confirmation__button--primary {
+    background: var(--blue-bright);
+    color: var(--white);
+}
+
+.confirmation__button--primary:hover {
+    background: var(--blue);
+}
+
+.confirmation__button--secondary {
+    background: transparent;
+    color: var(--white);
+}
+
+.confirmation__button--secondary:hover {
+    background: var(--white);
+    color: var(--navy);
+}
+
+/* NOTE */
+
+.confirmation__note {
+    display: block;
+
+    margin-top: 35px;
+
+    color: #71829A;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .confirmation {
+        min-height: calc(100vh - 70px);
+
+        padding: 80px 20px;
+    }
+
+    .confirmation h1 {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+    }
+
+    .confirmation__message {
+        font-size: 0.95rem;
+    }
+
+    .confirmation__actions {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .confirmation__button {
+        width: 100%;
+        max-width: 330px;
+    }
+
+}
