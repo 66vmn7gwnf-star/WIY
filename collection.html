@@ -522,9 +522,301 @@
             © 2026 WIY
         </span>
 
-    </footer>
+        </footer>
 
-<script src="script.js"></script>
+
+    <!-- ================================
+         COLLECTION JAVASCRIPT
+    ================================= -->
+
+    <script>
+
+        /* =========================================
+           PROJECT FILTER
+        ========================================= */
+
+        const filterButtons =
+            document.querySelectorAll(
+                ".collection-filter__button"
+            );
+
+
+        const filterProjects =
+            document.querySelectorAll(
+                ".collection-project"
+            );
+
+
+        filterButtons.forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const selectedFilter =
+                        button.dataset.filter;
+
+
+                    /* Change active button */
+
+                    filterButtons.forEach(
+                        function (item) {
+
+                            item.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    /* Filter projects */
+
+                    filterProjects.forEach(
+                        function (project) {
+
+                            const category =
+                                project.dataset.category;
+
+
+                            if (
+                                selectedFilter === "all" ||
+                                category === selectedFilter
+                            ) {
+
+                                project.classList.remove(
+                                    "is-hidden"
+                                );
+
+                                project.classList.add(
+                                    "is-filtering"
+                                );
+
+                            } else {
+
+                                project.classList.add(
+                                    "is-hidden"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+
+        /* =========================================
+           PROJECT NAVIGATION
+        ========================================= */
+
+        const sideNavItems =
+            document.querySelectorAll(
+                ".collection-side-nav__item"
+            );
+
+
+        const projectSections =
+            document.querySelectorAll(
+                ".collection-project"
+            );
+
+
+        const progressNumber =
+            document.querySelector(
+                ".collection-progress__current"
+            );
+
+
+        const projectObserver =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+
+                        const projectId =
+                            entry.target.id;
+
+
+                        /* Update side navigation */
+
+                        sideNavItems.forEach(
+                            function (item) {
+
+                                item.classList.remove(
+                                    "active"
+                                );
+
+
+                                if (
+                                    item.dataset.project ===
+                                    projectId
+                                ) {
+
+                                    item.classList.add(
+                                        "active"
+                                    );
+
+                                }
+
+                            }
+                        );
+
+
+                        /* Update project counter */
+
+                        const currentIndex =
+                            Array.from(
+                                projectSections
+                            ).indexOf(
+                                entry.target
+                            );
+
+
+                        if (progressNumber) {
+
+                            progressNumber.textContent =
+                                String(
+                                    currentIndex + 1
+                                ).padStart(2, "0");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.35
+                }
+
+            );
+
+
+        projectSections.forEach(
+            function (project) {
+
+                projectObserver.observe(
+                    project
+                );
+
+            }
+        );
+
+
+
+        /* =========================================
+           PROJECT REVEAL
+        ========================================= */
+
+        const revealProjects =
+            document.querySelectorAll(
+                ".collection-project--reveal"
+            );
+
+
+        const revealObserver =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "is-visible"
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        revealProjects.forEach(
+            function (project) {
+
+                revealObserver.observe(
+                    project
+                );
+
+            }
+        );
+
+
+
+        /* =========================================
+           IMAGE CLICK
+        ========================================= */
+
+        const projectImages =
+            document.querySelectorAll(
+                ".collection-project__image"
+            );
+
+
+        projectImages.forEach(
+            function (image) {
+
+                image.addEventListener(
+                    "click",
+                    function () {
+
+                        const project =
+                            image.closest(
+                                ".collection-project"
+                            );
+
+
+                        const link =
+                            project.querySelector(
+                                ".collection-project__link"
+                            );
+
+
+                        if (link) {
+
+                            link.click();
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
 
 </body>
 

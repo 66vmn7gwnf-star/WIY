@@ -3791,17 +3791,17 @@ body {
 
 
 /* =========================================
-   PROJECT REVEAL
+   PROJECT SCROLL REVEAL
 ========================================= */
 
 .collection-project--reveal {
-    opacity: 1;
+    opacity: 0;
 
-    transform: translateY(0);
+    transform: translateY(80px);
 
     transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+        opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
@@ -3812,6 +3812,70 @@ body {
 }
 
 
+/* PROJECT IMAGE */
+
+.collection-project--reveal
+.collection-project__image {
+    opacity: 0;
+
+    transform: scale(0.96);
+
+    transition:
+        opacity 1s ease 0.15s,
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+
+.collection-project--reveal.is-visible
+.collection-project__image {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* PROJECT TOP LINE */
+
+.collection-project--reveal
+.collection-project__top {
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.6s ease 0.1s,
+        transform 0.6s ease 0.1s;
+}
+
+
+.collection-project--reveal.is-visible
+.collection-project__top {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* PROJECT CONTENT */
+
+.collection-project--reveal
+.collection-project__content {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease 0.3s,
+        transform 0.7s ease 0.3s;
+}
+
+
+.collection-project--reveal.is-visible
+.collection-project__content {
+    opacity: 1;
+
+    transform: translateY(0);
+}
 /* =========================================
    IMAGE INTERACTION
 ========================================= */
