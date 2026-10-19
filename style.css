@@ -4169,3 +4169,432 @@ html {
     }
 
 }
+
+/* =========================================================
+   SERVICES & PRICING
+========================================================= */
+
+.services {
+    background: var(--navy);
+    padding: 120px 0;
+    position: relative;
+}
+
+.services__heading {
+    max-width: 760px;
+    margin-bottom: 70px;
+}
+
+.services__heading h2 {
+    margin-bottom: 20px;
+}
+
+.services__heading p {
+    color: var(--text-light);
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 650px;
+}
+
+
+/* SERVICE GRID */
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+
+/* SERVICE CARD */
+
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    background: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    padding: 38px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--blue);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* FEATURED CARD */
+
+.service-card--featured {
+    border-color: var(--blue);
+    box-shadow: 0 20px 60px rgba(20, 86, 217, 0.12);
+}
+
+.service-card--featured:hover {
+    box-shadow: 0 25px 70px rgba(20, 86, 217, 0.2);
+}
+
+
+/* POPULAR LABEL */
+
+.service-card__popular {
+    position: absolute;
+    top: 0;
+    right: 30px;
+
+    background: var(--blue);
+    color: var(--white);
+
+    padding: 9px 16px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    border-radius: 0 0 8px 8px;
+}
+
+
+/* CARD TOP */
+
+.service-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.service-card__number {
+    color: var(--blue-bright);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.service-card__label {
+    color: var(--blue-bright);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+/* CARD HEADING */
+
+.service-card h3 {
+    color: var(--white);
+    font-size: 27px;
+    line-height: 1.2;
+    margin: 0 0 24px;
+}
+
+
+/* PRICE */
+
+.service-card__price {
+    margin-bottom: 22px;
+}
+
+.service-card__price span {
+    color: var(--white);
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+
+/* DESCRIPTION */
+
+.service-card__description {
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.7;
+
+    margin-bottom: 32px;
+}
+
+
+/* FEATURES */
+
+.service-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px;
+}
+
+.service-card__features li {
+    position: relative;
+
+    color: #D5DFEC;
+    font-size: 14px;
+    line-height: 1.5;
+
+    padding: 11px 0 11px 24px;
+
+    border-bottom: 1px solid rgba(35, 69, 107, 0.5);
+}
+
+.service-card__features li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 0;
+    top: 10px;
+
+    color: var(--blue-bright);
+    font-weight: 700;
+}
+
+
+/* CARD BUTTON */
+
+.service-card__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: auto;
+
+    padding: 16px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--white);
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.service-card__button span {
+    color: var(--blue-bright);
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+.service-card__button:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.service-card__button:hover span {
+    color: var(--white);
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   WIY CARE
+========================================================= */
+
+.services__care {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 50px;
+
+    margin-top: 28px;
+    padding: 40px;
+
+    background: linear-gradient(
+        135deg,
+        var(--navy-light),
+        #0A2341
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+.services__care-content {
+    max-width: 650px;
+}
+
+.services__care-content h3 {
+    color: var(--white);
+    font-size: 28px;
+    margin: 10px 0 12px;
+}
+
+.services__care-content p {
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.services__care-price {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.services__care-price span {
+    color: var(--text-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.services__care-price strong {
+    color: var(--white);
+    font-size: 36px;
+}
+
+.services__care-price small {
+    color: var(--text-light);
+    font-size: 11px;
+}
+
+.services__care-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 15px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--white);
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.services__care-button span {
+    color: var(--blue-bright);
+}
+
+.services__care-button:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+
+/* =========================================================
+   CUSTOM PROJECT NOTE
+========================================================= */
+
+.services__note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    margin-top: 45px;
+
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.services__note > span {
+    color: var(--blue-bright);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.services__note p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin: 0;
+}
+
+.services__note a {
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.services__note a:hover {
+    color: var(--blue-bright);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .services__grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .services__care {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .services__care-price {
+        justify-content: flex-start;
+    }
+
+    .services__care-button {
+        width: fit-content;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .services {
+        padding: 90px 0;
+    }
+
+    .service-card {
+        padding: 28px;
+    }
+
+    .service-card h3 {
+        font-size: 24px;
+    }
+
+    .service-card__price span {
+        font-size: 36px;
+    }
+
+    .services__care {
+        padding: 28px;
+    }
+
+    .services__care-content h3 {
+        font-size: 24px;
+    }
+
+    .services__note {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
