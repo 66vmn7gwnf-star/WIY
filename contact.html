@@ -258,134 +258,264 @@
 
 
                     <form
-                        class="contact-form"
-                        id="contact-form"
-                        action="https://formspree.io/f/mjygvapq"
-                        method="POST"
-                    >
+    class="contact__form"
+    action="https://formspree.io/f/mjygvapq"
+    method="POST"
+>
 
-                        <!-- Spam protection -->
-                        <div class="contact-form__honeypot" aria-hidden="true">
-                            <label>
-                                Leave this field empty
-                                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-                            </label>
-                        </div>
-
-                        <div class="contact-form__row">
-
-                            <div class="contact-form__field">
-                                <label for="client-name">Full Name *</label>
-                                <input
-                                    type="text"
-                                    id="client-name"
-                                    name="name"
-                                    placeholder="Your name"
-                                    autocomplete="name"
-                                    required
-                                >
-                            </div>
-
-                            <div class="contact-form__field">
-                                <label for="client-email">Email Address *</label>
-                                <input
-                                    type="email"
-                                    id="client-email"
-                                    name="email"
-                                    placeholder="you@example.com"
-                                    autocomplete="email"
-                                    required
-                                >
-                            </div>
-
-                        </div>
+    <!-- SPAM PROTECTION -->
+    <div style="display:none;">
+        <label>
+            Leave this field empty
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </label>
+    </div>
 
 
-                        <div class="contact-form__field">
-                            <label for="business-name">Business / Organization</label>
-                            <input
-                                type="text"
-                                id="business-name"
-                                name="business"
-                                placeholder="Business name (if applicable)"
-                            >
-                        </div>
+    <!-- NAME + EMAIL -->
+
+    <div class="contact__form-row">
+
+        <div class="contact__field">
+
+            <label for="lead-name">
+                NAME *
+            </label>
+
+            <input
+                type="text"
+                id="lead-name"
+                name="name"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+            >
+
+        </div>
 
 
-                        <div class="contact-form__field">
+        <div class="contact__field">
 
-                            <label for="service">What can we help you with? *</label>
+            <label for="lead-email">
+                EMAIL *
+            </label>
 
-                            <select id="service" name="service" required>
-                                <option value="" disabled selected>Select a service</option>
-                                <option>New Website Design</option>
-                                <option>Website Redesign</option>
-                                <option>Website Updates & Maintenance</option>
-                                <option>Landing Page Development</option>
-                                <option>Website Hosting & Ongoing Support</option>
-                                <option>Not Sure Yet / Other</option>
-                            </select>
+            <input
+                type="email"
+                id="lead-email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+            >
 
-                        </div>
+        </div>
 
-
-                        <div class="contact-form__field">
-                            <label for="existing-website">Existing Website</label>
-                            <input
-                                type="url"
-                                id="existing-website"
-                                name="existing_website"
-                                placeholder="https://www.example.com"
-                            >
-                            <small>Optional — include this if you already have a website.</small>
-                        </div>
+    </div>
 
 
-                        <div class="contact-form__field">
+    <!-- BUSINESS -->
 
-                            <label for="timeline">When would you like to get started?</label>
+    <div class="contact__field">
 
-                            <select id="timeline" name="timeline">
-                                <option value="" selected>Select a timeline</option>
-                                <option>As soon as possible</option>
-                                <option>Within the next month</option>
-                                <option>Within 1–3 months</option>
-                                <option>More than 3 months</option>
-                                <option>Just exploring options</option>
-                            </select>
+        <label for="lead-business">
+            BUSINESS / COMPANY
+        </label>
 
-                        </div>
+        <input
+            type="text"
+            id="lead-business"
+            name="business"
+            placeholder="Your business name"
+        >
 
-
-                        <div class="contact-form__field">
-
-                            <label for="project-details">
-                                Tell us about your project *
-                            </label>
-
-                            <textarea
-                                id="project-details"
-                                name="message"
-                                rows="6"
-                                placeholder="What kind of website do you need? What are you hoping to accomplish?"
-                                required
-                            ></textarea>
-
-                        </div>
+    </div>
 
 
-                        <button type="submit" class="contact-form__submit">
-                            Send Project Inquiry <span>→</span>
-                        </button>
+    <!-- SERVICE -->
 
-                        <p class="contact-form__status" id="form-status" role="status" aria-live="polite"></p>
+    <div class="contact__field">
 
-                        <p class="contact-form__note">
-                            Your information will only be used to respond
-                            to your inquiry.
-                        </p>
+        <label for="lead-service">
+            WHAT ARE YOU LOOKING FOR? *
+        </label>
 
-                    </form>
+        <select
+            id="lead-service"
+            name="service"
+            required
+        >
+
+            <option value="" disabled selected>
+                Select an option
+            </option>
+
+            <option value="New Website">
+                New Website
+            </option>
+
+            <option value="Website Redesign">
+                Website Redesign
+            </option>
+
+            <option value="Website Updates">
+                Website Updates / Maintenance
+            </option>
+
+            <option value="Landing Page">
+                Landing Page
+            </option>
+
+            <option value="AI Integration">
+                AI Integration
+            </option>
+
+            <option value="Not Sure">
+                I'm Not Sure Yet
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- BUDGET -->
+
+    <div class="contact__field">
+
+        <label for="lead-budget">
+            ESTIMATED BUDGET
+        </label>
+
+        <select
+            id="lead-budget"
+            name="budget"
+        >
+
+            <option value="" disabled selected>
+                Select a range
+            </option>
+
+            <option value="Under $1,000">
+                Under $1,000
+            </option>
+
+            <option value="$1,000 - $1,500">
+                $1,000 – $1,500
+            </option>
+
+            <option value="$1,500 - $2,000">
+                $1,500 – $2,000
+            </option>
+
+            <option value="$2,000+">
+                $2,000+
+            </option>
+
+            <option value="Not Sure">
+                Not Sure Yet
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- EXISTING WEBSITE -->
+
+    <div class="contact__field">
+
+        <label for="lead-website">
+            EXISTING WEBSITE
+        </label>
+
+        <input
+            type="url"
+            id="lead-website"
+            name="existing_website"
+            placeholder="https://yourwebsite.com"
+        >
+
+    </div>
+
+
+    <!-- TIMELINE -->
+
+    <div class="contact__field">
+
+        <label for="lead-timeline">
+            WHEN ARE YOU LOOKING TO START?
+        </label>
+
+        <select
+            id="lead-timeline"
+            name="timeline"
+        >
+
+            <option value="" disabled selected>
+                Select a timeline
+            </option>
+
+            <option value="As soon as possible">
+                As soon as possible
+            </option>
+
+            <option value="Within 1 month">
+                Within 1 month
+            </option>
+
+            <option value="1-3 months">
+                1–3 months
+            </option>
+
+            <option value="3+ months">
+                3+ months
+            </option>
+
+            <option value="Just exploring">
+                Just exploring
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- PROJECT DETAILS -->
+
+    <div class="contact__field">
+
+        <label for="lead-message">
+            TELL US ABOUT YOUR PROJECT *
+        </label>
+
+        <textarea
+            id="lead-message"
+            name="message"
+            rows="7"
+            placeholder="Tell us about your business, what you want your website to do, and anything else we should know."
+            required
+        ></textarea>
+
+    </div>
+
+
+    <!-- SUBMIT -->
+
+    <button
+        type="submit"
+        class="contact__form-button"
+    >
+        START THE CONVERSATION
+        <span>→</span>
+    </button>
+
+
+    <p class="contact__form-note">
+        We'll review your project and get back to you by email.
+    </p>
+
+</form>
 
                 </div>
 
