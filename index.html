@@ -899,11 +899,85 @@
 
 </footer>
 
+
 <!-- =====================================================
      WIY ASSISTANT
 ===================================================== -->
 
-<form class="wiy-ai__form" id="wiyAiForm">
+<button
+    class="wiy-ai-button"
+    id="wiyAiButton"
+    aria-label="Open WIY Assistant"
+>
+    <span class="wiy-ai-button__dot"></span>
+    WIY AI
+</button>
+
+
+<div class="wiy-ai" id="wiyAi" aria-hidden="true">
+
+    <div class="wiy-ai__header">
+
+        <div class="wiy-ai__title">
+
+            <span class="wiy-ai__eyebrow">
+                THE WEB IS YOURS TO DESIGN
+            </span>
+
+            <h3>WIY Assistant</h3>
+
+        </div>
+
+        <button
+            class="wiy-ai__close"
+            id="wiyAiClose"
+            aria-label="Close WIY Assistant"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="wiy-ai__messages" id="wiyAiMessages">
+
+        <div class="wiy-ai__message wiy-ai__message--bot">
+
+            <span class="wiy-ai__label">
+                WIY AI
+            </span>
+
+            <p>
+                Hey — welcome to WIY. What are you looking to build?
+            </p>
+
+        </div>
+
+
+        <div class="wiy-ai__suggestions" id="wiyAiSuggestions">
+
+            <button type="button" data-question="What does WIY do?">
+                What does WIY do?
+            </button>
+
+            <button type="button" data-question="How much does a website cost?">
+                Website pricing?
+            </button>
+
+            <button type="button" data-question="Which WIY package is right for me?">
+                Which package is right for me?
+            </button>
+
+            <button type="button" data-question="What can WIY build?">
+                What can WIY build?
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <form class="wiy-ai__form" id="wiyAiForm">
 
     <input
         type="text"
@@ -923,6 +997,9 @@
     </button>
 
 </form>
+
+</div>
+
 
 </div>
 

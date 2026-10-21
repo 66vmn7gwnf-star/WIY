@@ -587,4 +587,14 @@ console.log("WIY AI SUBMIT FIRED");
 
 });
 
+/* =========================
+   WIY AI HTML ESCAPE
+========================= */
+
+function escapeWiyAiHTML(value) {
+    const div = document.createElement("div");
+    div.textContent = value;
+    return div.innerHTML;
+}
+
 
