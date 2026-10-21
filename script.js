@@ -412,10 +412,12 @@ document.querySelectorAll(
 });
 
 
-/* Temporary message handler */
+/* =====================================================
+   WIY ASSISTANT — AI CONNECTION
+===================================================== */
 
-wiyAiForm.addEventListener("submit", (event) => {
-
+wiyAiForm.addEventListener("submit", async (event) => {
+console.log("WIY AI SUBMIT FIRED");
     event.preventDefault();
 
     const message = wiyAiInput.value.trim();
@@ -423,6 +425,7 @@ wiyAiForm.addEventListener("submit", (event) => {
     if (!message) {
         return;
     }
+
 
     /* Add visitor message */
 
@@ -450,9 +453,83 @@ wiyAiForm.addEventListener("submit", (event) => {
     wiyAiInput.value = "";
 
 
-    /* Temporary response */
+    /* Scroll down */
 
-    setTimeout(() => {
+    wiyAiMessages.scrollTop =
+        wiyAiMessages.scrollHeight;
+
+
+    /* =========================
+       TYPING INDICATOR
+    ========================= */
+
+    const typingMessage =
+        document.createElement("div");
+
+    typingMessage.className =
+        "wiy-ai__message wiy-ai__message--bot";
+
+    typingMessage.innerHTML = `
+        <span class="wiy-ai__label">
+            WIY AI
+        </span>
+
+        <div class="wiy-ai__typing">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    `;
+
+    wiyAiMessages.appendChild(typingMessage);
+
+
+    wiyAiMessages.scrollTop =
+        wiyAiMessages.scrollHeight;
+
+
+    try {
+
+        /* =========================
+           SEND TO VERCEL
+        ========================= */
+
+        const response = await fetch(
+            "https://wiy-ai-backends.vercel.app/api/chat",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    message: message,
+                    site: "wiy"
+                })
+            }
+        );
+
+
+        const data = await response.json();
+
+
+        /* Remove typing indicator */
+
+        typingMessage.remove();
+
+
+        if (!response.ok) {
+            throw new Error(
+                data.error ||
+                "The AI request failed."
+            );
+        }
+
+
+        /* =========================
+           ADD AI RESPONSE
+        ========================= */
 
         const botMessage =
             document.createElement("div");
@@ -466,27 +543,48 @@ wiyAiForm.addEventListener("submit", (event) => {
             </span>
 
             <p>
-                I'm almost ready to help with that. WIY Assistant
-                is currently being connected to the AI system.
+                ${escapeWiyAiHTML(data.reply)}
             </p>
         `;
 
         wiyAiMessages.appendChild(botMessage);
 
-        wiyAiMessages.scrollTop =
-            wiyAiMessages.scrollHeight;
 
-    }, 500);
+    } catch (error) {
+
+        console.error("WIY Assistant error:", error);
+
+
+        typingMessage.remove();
+
+
+        const errorMessage =
+            document.createElement("div");
+
+        errorMessage.className =
+            "wiy-ai__message wiy-ai__message--bot";
+
+        errorMessage.innerHTML = `
+            <span class="wiy-ai__label">
+                WIY AI
+            </span>
+
+            <p>
+                I'm having trouble connecting right now.
+                Please try again in a moment.
+            </p>
+        `;
+
+        wiyAiMessages.appendChild(errorMessage);
+
+    }
+
+
+    /* Keep chat scrolled to newest message */
+
+    wiyAiMessages.scrollTop =
+        wiyAiMessages.scrollHeight;
 
 });
 
-
-function escapeWiyAiHTML(value) {
-
-    const div = document.createElement("div");
-
-    div.textContent = value;
-
-    return div.innerHTML;
-}
 
