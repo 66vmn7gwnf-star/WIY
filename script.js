@@ -335,3 +335,158 @@ if (
     );
 
 }
+
+/* =====================================================
+   WIY ASSISTANT
+===================================================== */
+
+const wiyAiButton = document.getElementById("wiyAiButton");
+const wiyAi = document.getElementById("wiyAi");
+const wiyAiClose = document.getElementById("wiyAiClose");
+const wiyAiForm = document.getElementById("wiyAiForm");
+const wiyAiInput = document.getElementById("wiyAiInput");
+const wiyAiMessages = document.getElementById("wiyAiMessages");
+const wiyAiSuggestions = document.getElementById("wiyAiSuggestions");
+
+
+function openWiyAi() {
+
+    wiyAi.classList.add("is-open");
+
+    wiyAi.setAttribute("aria-hidden", "false");
+
+    setTimeout(() => {
+        wiyAiInput.focus();
+    }, 300);
+}
+
+
+function closeWiyAi() {
+
+    wiyAi.classList.remove("is-open");
+
+    wiyAi.setAttribute("aria-hidden", "true");
+}
+
+
+wiyAiButton.addEventListener("click", openWiyAi);
+
+wiyAiClose.addEventListener("click", closeWiyAi);
+
+
+/* Close with Escape */
+
+document.addEventListener("keydown", (event) => {
+
+    if (
+        event.key === "Escape" &&
+        wiyAi.classList.contains("is-open")
+    ) {
+        closeWiyAi();
+    }
+
+});
+
+
+/* Suggested questions */
+
+document.querySelectorAll(
+    ".wiy-ai__suggestions button"
+).forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const question = button.dataset.question;
+
+        wiyAiInput.value = question;
+
+        wiyAiForm.dispatchEvent(
+            new Event("submit", {
+                bubbles: true,
+                cancelable: true
+            })
+        );
+
+    });
+
+});
+
+
+/* Temporary message handler */
+
+wiyAiForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const message = wiyAiInput.value.trim();
+
+    if (!message) {
+        return;
+    }
+
+    /* Add visitor message */
+
+    const userMessage =
+        document.createElement("div");
+
+    userMessage.className =
+        "wiy-ai__message wiy-ai__message--user";
+
+    userMessage.innerHTML =
+        `<p>${escapeWiyAiHTML(message)}</p>`;
+
+    wiyAiMessages.appendChild(userMessage);
+
+
+    /* Hide suggestions */
+
+    if (wiyAiSuggestions) {
+        wiyAiSuggestions.style.display = "none";
+    }
+
+
+    /* Clear input */
+
+    wiyAiInput.value = "";
+
+
+    /* Temporary response */
+
+    setTimeout(() => {
+
+        const botMessage =
+            document.createElement("div");
+
+        botMessage.className =
+            "wiy-ai__message wiy-ai__message--bot";
+
+        botMessage.innerHTML = `
+            <span class="wiy-ai__label">
+                WIY AI
+            </span>
+
+            <p>
+                I'm almost ready to help with that. WIY Assistant
+                is currently being connected to the AI system.
+            </p>
+        `;
+
+        wiyAiMessages.appendChild(botMessage);
+
+        wiyAiMessages.scrollTop =
+            wiyAiMessages.scrollHeight;
+
+    }, 500);
+
+});
+
+
+function escapeWiyAiHTML(value) {
+
+    const div = document.createElement("div");
+
+    div.textContent = value;
+
+    return div.innerHTML;
+}
+
