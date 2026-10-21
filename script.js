@@ -528,26 +528,34 @@ console.log("WIY AI SUBMIT FIRED");
 
 
         /* =========================
-           ADD AI RESPONSE
-        ========================= */
+   ADD AI RESPONSE
+========================= */
 
-        const botMessage =
-            document.createElement("div");
+const botMessage =
+    document.createElement("div");
 
-        botMessage.className =
-            "wiy-ai__message wiy-ai__message--bot";
+botMessage.className =
+    "wiy-ai__message wiy-ai__message--bot";
 
-        botMessage.innerHTML = `
-            <span class="wiy-ai__label">
-                WIY AI
-            </span>
+botMessage.innerHTML = `
+    <span class="wiy-ai__label">
+        WIY AI
+    </span>
 
-            <p>
-                ${escapeWiyAiHTML(data.reply)}
-            </p>
-        `;
+    <p>
+        ${escapeWiyAiHTML(data.reply)}
+    </p>
 
-        wiyAiMessages.appendChild(botMessage);
+    <a
+        href="contact.html"
+        class="wiy-ai__lead-button"
+    >
+        START A PROJECT
+        <span>→</span>
+    </a>
+`;
+
+wiyAiMessages.appendChild(botMessage);
 
 
     } catch (error) {
