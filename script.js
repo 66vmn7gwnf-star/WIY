@@ -537,6 +537,43 @@ const botMessage =
 botMessage.className =
     "wiy-ai__message wiy-ai__message--bot";
 
+/* Determine whether this conversation sounds like a potential lead */
+
+const leadKeywords = [
+    "hire",
+    "hiring",
+    "interested",
+    "interested in working",
+    "work with you",
+    "work with wiy",
+    "start a project",
+    "start my project",
+    "build my website",
+    "build a website",
+    "need a website",
+    "want a website",
+    "website for my business",
+    "redesign my website",
+    "redesign our website",
+    "website for my restaurant",
+    "website for my company",
+    "website for my business",
+    "how much would",
+    "how much does",
+    "pricing for my",
+    "cost for my",
+    "get started",
+    "ready to start",
+    "ready to build"
+];
+
+const lowerMessage = message.toLowerCase();
+
+const isPotentialLead =
+    leadKeywords.some(keyword =>
+        lowerMessage.includes(keyword)
+    );
+
 botMessage.innerHTML = `
     <span class="wiy-ai__label">
         WIY AI
@@ -546,16 +583,25 @@ botMessage.innerHTML = `
         ${escapeWiyAiHTML(data.reply)}
     </p>
 
-    <a
-        href="contact.html"
-        class="wiy-ai__lead-button"
-    >
-        START A PROJECT
-        <span>→</span>
-    </a>
+    ${
+        isPotentialLead
+            ? `
+                <a
+                    href="contact.html"
+                    class="wiy-ai__lead-button"
+                >
+                    START A PROJECT
+                    <span>→</span>
+                </a>
+            `
+            : ""
+    }
 `;
 
 wiyAiMessages.appendChild(botMessage);
+
+wiyAiMessages.scrollTop =
+    wiyAiMessages.scrollHeight;
 
 
     } catch (error) {
